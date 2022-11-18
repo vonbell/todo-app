@@ -1,38 +1,254 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
 .App {
-  text-align: center;
+    display: flex;
+    text-align: center;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-image: linear-gradient(79deg, #110b1c, #0b141c 48%, #0b191c);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.todo-h1 {
+    font-size: calc(1.2rem + 3vw);
+    align-self: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.logout-btn {
+    align-self: flex-end;
+    margin: -0.5rem 0 2rem 0;
+    padding: 0.5rem 0;
+    border: 1px solid white;
+    border-radius: 8px;
+    box-shadow: 1px 2px rgb(245, 245, 245);
+    cursor: pointer;
+    width: 4rem;
+    outline: none;
+    background: linear-gradient(79deg, #0b1c1a, #0b171c 48%, #151b33);
+    color: white;
+    text-transform: capitalize;
 }
 
-.App-link {
-  color: #61dafb;
+/* TodoForm Component */
+.list-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 12rem;
+    padding: 1rem 0 1rem 0;
+    text-align: center;
+    width: 300px;
+    min-height: 450px;
+    background-color: #14121a;
+    border-radius: 10px;
+    border: 1px solid white;
+    box-shadow: 5px 10px rgb(245, 245, 245);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.search-container {
+    margin-bottom: 1rem;
+}
+
+.todo-form {
+    width: 100%;
+    height: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+hr {
+    margin-bottom: 1rem;
+}
+
+.todo-input {
+    padding: 0.65rem 1rem 0.65rem 1rem;
+    border: 2px solid #3ec7f4; 
+    border-radius: 8px 0 0 8px;
+    background: transparent;
+    color: white;
+    width: 47%;
+}
+
+.todo-input.search {
+    margin-right: 1.45rem;
+    padding: 0.65rem 1rem 0.65rem 1rem;
+    border-radius: 10px;
+    border: 2px solid white;
+    width: 40%;
+}
+
+.todo-input::placeholder {
+    color: #e2e2e2;
+}
+
+.todo-btn {
+    padding: 0.77rem 1rem 0.77rem 1rem;
+    border: none;
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+    width: 4rem;
+    outline: none;
+    background: linear-gradient(90deg, #3ec7f4, #3e81f4);
+    color: white;
+    text-transform: capitalize;
+}
+
+.todo-btn.new {
+    border-radius: 8px;
+    padding: 0.77rem 1rem 0.77rem 1rem;
+}
+
+.todo-input.update {
+    border: 2px solid #3ef4ca;
+}
+
+.todo-btn.update {
+    background: linear-gradient(90deg, #3ef4ca, #59f43e);
+}
+
+.todo-container {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    flex-direction: column;
+}
+
+.todo-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto auto 0.5rem auto;
+    color: white;
+    background: linear-gradient(90deg, #3e81f4, #3ec7f4);
+    padding: 0.75rem 1rem 0.75rem 1rem;
+    border-radius: 8px;
+    width: 70%;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.edit-icon {
+    margin-right: 0.5rem;
+}
+
+/* Login Component */
+.form-container, .login-form {
+    display: flex;
+    flex-direction: column;
+    width: 290px;
+}
+
+.login-h1 {
+    font-size: calc(1.5rem + 3vw);
+}
+
+.login-form {
+    margin: 3rem auto 20rem auto;
+}
+
+label {
+    text-align: left;
+    padding: 0.25rem 0;
+    margin-bottom: -0.25rem;
+}
+
+.login-input {
+    margin: 0.5rem 0 1rem 0;
+    padding: 1rem 4rem 1rem 4rem;
+    border: none; 
+    border-radius: 10px;
+} 
+
+.login-error {
+    margin: 0.5rem 0;
+    padding: 1rem 4rem 1rem 4rem;
+    border-color: red;
+    border-radius: 10px;
+}
+
+.login-btn {
+    border: none;
+    background-color: #3bbee9;
+    margin-top: 0.75rem;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #0b141c;
+}
+
+.login-btn:hover, .logout-btn:hover {
+    background: white;
+    color: #0b141c;
+    transition: 0.7s;
+}
+
+.login-btn:active, .login-btn:focus {
+    color: rgba(0, 0, 0, .5);
+    background-color: snow;
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+@media screen and (min-width: 600px) {
+    .form-container {
+        padding: 7rem;
+        border: 1px solid white;
+        border-radius: 10px;
+        margin: 0.5rem;
+        width: 300px;
+        box-shadow: 5px 10px rgb(245, 245, 245);
+        align-items: center;
+        justify-content: center;
+    }
+    .header-container {
+        margin-bottom: 2rem;
+    }
+    .logout-btn {
+        width: 5rem;
+        margin: -2rem -2rem 2rem 0;
+    }
+    .login-form {
+        margin: 3rem auto;
+    }
+    .list-container {
+        margin-bottom: 0;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        padding: 2rem 0 2rem 0;
+        text-align: center;
+        width: 500px;
+        min-height: 500px;
+    }
+    .search-container {
+        margin-bottom: 2rem;
+    }
+    .todo-form {
+        margin-bottom: 0.5rem;
+    }
+    .todo-input {
+        /* margin-right: 3rem; */
+        width: 55%;
+    }
+    .todo-input.search {
+        margin-right: 4rem;
+    }
 }
