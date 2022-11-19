@@ -155,6 +155,27 @@ hr {
     flex-direction: row;
     position: relative;
     flex-direction: column;
+    max-height: 350px;
+    overflow: auto;
+}
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    /* background: #f1f1f1; */
+    background: #4e4b54;
+    /* box-shadow: inset 0 0 5px grey;  */
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(165, 162, 162); 
 }
 
 .todo-row {
@@ -178,7 +199,7 @@ hr {
 }
 
 .edit-icon {
-    margin-right: 0.5rem;
+    margin-right: 0.75rem;
 }
 
 /* Login Component */
