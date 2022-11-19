@@ -2,6 +2,7 @@ import { List } from "./List";
 import { useState, useRef } from "react";
 import user from "../img/user.svg";
 import lock from "../img/lock.svg";
+import logo from "../img/rapptr-labs.png";
 
 export const Login = () => {
     const [email, setEmail] = useState('');
@@ -48,7 +49,7 @@ export const Login = () => {
     // Login Form JSX code
     const renderLoginForm = (
         <div className="form-container">
-            <h1 className="login-h1">Rapptr Labs</h1>
+            <img className="logo" src={logo} alt="rapptr-labs logo" />
             <form ref={form} method="POST" encType="multipart/form-data" className="login-form" onSubmit={handleSubmit}>
                 <label htmlFor="email">Email</label>
                 <input 

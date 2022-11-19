@@ -1,6 +1,9 @@
 * {
     margin: 0;
     padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
@@ -100,14 +103,43 @@ hr {
     cursor: pointer;
     width: 4rem;
     outline: none;
-    background: linear-gradient(90deg, #3ec7f4, #3e81f4);
+    /* background: linear-gradient(90deg, #3ec7f4, #3e81f4); */
     color: white;
     text-transform: capitalize;
+    background-size: 300% 100%;
+    -moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    background-image: linear-gradient(to right, #25aae1, #3ec7f4, #3e81f4);
+    box-shadow: 0 4px 10px 0 rgba(62, 199, 244, 0.534);
+}
+
+.todo-btn:hover {
+    background-position: 100% 0;
+    -moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.todo-btn:focus {
+    outline: none;
+}
+
+.todo-btn.new:focus {
+    box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+    transform: translateY(-0.25em);
 }
 
 .todo-btn.new {
     border-radius: 8px;
     padding: 0.77rem 1rem 0.77rem 1rem;
+}
+
+.todo-btn.new:hover {
+    box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+    transform: translateY(-0.25em);
 }
 
 .todo-input.update {
@@ -192,12 +224,21 @@ label {
     border-radius: 10px;
     cursor: pointer;
     color: #0b141c;
+    box-shadow: 1px 2px rgb(245, 245, 245);
 }
 
 .login-btn:hover, .logout-btn:hover {
     background: white;
     color: #0b141c;
     transition: 0.7s;
+
+    box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+    transform: translateY(-0.25em);
+}
+
+.login-btn:focus {
+    box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+    transform: translateY(-0.25em);
 }
 
 .login-btn:active, .login-btn:focus {
