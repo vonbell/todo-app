@@ -50,7 +50,7 @@ export const Login = () => {
     const renderLoginForm = (
         <div className="form-container">
             <img className="logo" src={logo} alt="rapptr-labs logo" />
-            <form ref={form} method="POST" encType="multipart/form-data" className="login-form" onSubmit={handleSubmit}>
+            <form className="login-form" ref={form} method="POST" encType="multipart/form-data" onSubmit={handleSubmit}>
                 <label htmlFor="email">Email</label>
                 <input 
                     className={emailError ? 'login-error' : 'login-input'} 
