@@ -27,7 +27,7 @@
 }
 
 .todo-h1 {
-    font-size: calc(1.2rem + 3vw);
+    font-size: calc(0.75rem + 2vw);
     align-self: center;
 }
 
@@ -311,6 +311,9 @@ label {
     }
     .search-container {
         margin-bottom: 2rem;
+    }
+    .todo-h1 {
+        font-size: calc(1rem + 3vw);
     }
     .todo-form {
         margin-bottom: 0.5rem;

@@ -2,7 +2,7 @@ import { List } from "./List";
 import { useState, useRef } from "react";
 import user from "../img/user.svg";
 import lock from "../img/lock.svg";
-import logo from "../img/rapptr-labs.png";
+import logo from "../img/AllDay.png";
 
 export const Login = () => {
     const [email, setEmail] = useState('');
@@ -16,7 +16,7 @@ export const Login = () => {
     const handleEmailChange = (e) => setEmail(e.target.value);   
     const handlePasswordChange = (e) => setPassword(e.target.value);
 
-    const testLogin = [{email: "test@rapptrlabs.com", password: "Test123"}]; // User Login test info
+    const testLogin = [{email: "test@allday.com", password: "Test123"}]; // User Login test info
     const errors = {em: "Not a valid email", pass: "Invalid password"}; // Error messages
 
     const handleSubmit = (e) => {
@@ -49,7 +49,7 @@ export const Login = () => {
     // Login Form JSX code
     const renderLoginForm = (
         <div className="form-container">
-            <img className="logo" src={logo} alt="rapptr-labs logo" />
+            <img className="logo" src={logo} alt="AllDay logo" />
             <form className="login-form" ref={form} method="POST" encType="multipart/form-data" onSubmit={handleSubmit}>
                 <label htmlFor="email">Email</label>
                 <input 

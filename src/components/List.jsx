@@ -53,7 +53,7 @@ export const List = (props) => {
         <div className="container">
             <div className="header-container">
                 <button className="logout-btn" onClick={() => window.location.reload(false)}>Logout</button>
-                <h1 className="todo-h1">My To-Do List</h1>
+                <h1 className="todo-h1">A To-Do List for Life</h1>
             </div>     
                 
             <div className="list-container">
