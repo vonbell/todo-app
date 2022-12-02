@@ -1,6 +1,7 @@
 import { TodoForm } from "./TodoForm";
 import Todos from "./Todos";
 import { useState, useEffect, useRef } from "react";
+import search from "../img/search.svg";
 
 export const List = (props) => {
     const [todos, setTodos] = useState([]);
@@ -60,6 +61,12 @@ export const List = (props) => {
                 <div className="search-container">
                     <input 
                         className="todo-input search" 
+                        style={{ 
+                            backgroundImage: `url(${search})`, 
+                            paddingLeft: "30px", 
+                            backgroundRepeat: "no-repeat", 
+                            backgroundPosition: "left",
+                        }} 
                         type="text" placeholder="Search" 
                         onChange={(e) => {setSearchTerm(e.target.value)}} 
                         ref={inputRef} 

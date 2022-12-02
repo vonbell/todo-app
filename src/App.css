@@ -7,6 +7,10 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+*:focus {
+    outline: none;
+}
+
 .App {
     display: flex;
     text-align: center;
@@ -15,7 +19,11 @@
     align-items: center;
     justify-content: center;
     color: white;
-    background-image: linear-gradient(79deg, #110b1c, #0b141c 48%, #0b191c);
+    /* background-image: linear-gradient(79deg, #110b1c, #0b141c 48%, #0b191c); */
+    /* background-image: linear-gradient( #101010f6, #101010 45%); */
+    background-image: linear-gradient( 
+        #1e1e1e, #101010 45%);
+    /* background-image: linear-gradient(79deg, #0b101c, #0b1b1c 48%, #0f1c0b); */
 }
 
 .header-container {
@@ -26,29 +34,52 @@
     margin-bottom: 1.5rem;
 }
 
-.todo-h1 {
-    font-size: calc(0.75rem + 2vw);
-    align-self: center;
-}
-
 .logout-btn {
     align-self: flex-end;
     margin: -0.5rem 0 2rem 0;
     padding: 0.5rem 0;
-    border: 1px solid white;
+    color: #cdcdcd;
+    border: 1px solid #cdcdcd;
     border-radius: 8px;
-    box-shadow: 1px 2px rgb(245, 245, 245);
+    /* box-shadow: 1px 2px rgb(245, 245, 245); */
     cursor: pointer;
     width: 4rem;
     outline: none;
-    background: linear-gradient(79deg, #0b1c1a, #0b171c 48%, #151b33);
-    color: white;
     text-transform: capitalize;
+    background-size: 300% 100%;
+    -moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    background-image: linear-gradient(to right, #0b1c1a, #0b171c 48%, #0a1e19);
+}
+
+.logout-btn:hover {
+    color: white;
+    border: 1px solid #cdcdcd;
+    box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+    background-position: 100% 0;
+    -moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    transform: scale(1.1);
+    transition: 0.2s;
+}
+
+.logout-btn:focus {
+    box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+    transform: translateY(-0.25em);
 }
 
 /* ================================================================================= */
 /*                          Todo Form                                                */
 /* ================================================================================= */
+.todo-h1 {
+    font-size: calc(0.75rem + 2vw);
+    align-self: center;
+}
+
 .list-container {
     display: flex;
     flex-direction: column;
@@ -58,10 +89,11 @@
     text-align: center;
     width: 300px;
     min-height: 450px;
-    background-color: #14121a;
+    background-color: #121212;
+    /* background: linear-gradient(to top, #000 0%, rgba(20, 20, 20) 100%, rgba(0, 0, 0, 0.5) 100%); */
     border-radius: 10px;
     border: 1px solid white;
-    box-shadow: 5px 10px rgb(245, 245, 245);
+    box-shadow: 8px 8px rgb(245, 245, 245);
 }
 
 .search-container {
@@ -80,7 +112,7 @@ hr {
 
 .todo-input {
     padding: 0.65rem 1rem 0.65rem 1rem;
-    border: 2px solid #3ec7f4; 
+    border: 2px solid white; 
     border-radius: 8px 0 0 8px;
     background: transparent;
     color: white;
@@ -93,10 +125,17 @@ hr {
     border-radius: 10px;
     border: 2px solid white;
     width: 40%;
+    background-color: white;
+    color: black;
+}
+
+textarea:focus, input:focus {
+    outline: none;
 }
 
 .todo-input::placeholder {
-    color: #e2e2e2;
+    /* color: #e2e2e2; */
+    color: #b3b3b3;
 }
 
 .todo-btn {
@@ -106,19 +145,23 @@ hr {
     cursor: pointer;
     width: 4rem;
     outline: none;
-    /* background: linear-gradient(90deg, #3ec7f4, #3e81f4); */
-    color: white;
+    color: #e6e6e6;
     text-transform: capitalize;
     background-size: 300% 100%;
     -moz-transition: all .4s ease-in-out;
     -o-transition: all .4s ease-in-out;
     -webkit-transition: all .4s ease-in-out;
     transition: all .4s ease-in-out;
-    background-image: linear-gradient(to right, #25aae1, #3ec7f4, #3e81f4);
-    box-shadow: 0 4px 10px 0 rgba(62, 199, 244, 0.534);
+    /* background-image: linear-gradient(to right, #25aae1, #3ec7f4, #3e81f4); */
+    background-image: linear-gradient(to right, #4baf48, #597eda, #59da84);
+    /* box-shadow: 0 4px 10px 0 rgba(62, 244, 183, 0.286); */
 }
 
 .todo-btn:hover {
+    color: white;
+    transform: scale(1.1);
+    transition: 0.2s;
+    box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
     background-position: 100% 0;
     -moz-transition: all .4s ease-in-out;
     -o-transition: all .4s ease-in-out;
@@ -138,11 +181,6 @@ hr {
 .todo-btn.new {
     border-radius: 8px;
     padding: 0.77rem 1rem 0.77rem 1rem;
-}
-
-.todo-btn.new:hover {
-    box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-    transform: translateY(-0.25em);
 }
 
 .todo-input.update {
@@ -186,7 +224,7 @@ hr {
     align-items: center;
     margin: auto auto 0.5rem auto;
     color: white;
-    background: linear-gradient(90deg, #3e81f4, #3ec7f4);
+    background: linear-gradient(90deg, #171717, #17171777);
     padding: 0.75rem 1rem 0.75rem 1rem;
     border-radius: 8px;
     width: 70%;
@@ -246,22 +284,18 @@ label {
 
 .login-btn {
     border: none;
-    background-color: #3bbee9;
+    background-color: #48af54;
     margin-top: 0.75rem;
     padding: 20px;
     border-radius: 10px;
     cursor: pointer;
-    color: #0b141c;
+    color: white;
     box-shadow: 1px 2px rgb(245, 245, 245);
 }
 
-.login-btn:hover, .logout-btn:hover {
-    background: white;
-    color: #0b141c;
+.login-btn:hover {
+    background: #48af548a;
     transition: 0.7s;
-
-    box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-    transform: translateY(-0.25em);
 }
 
 .login-btn:focus {
@@ -292,12 +326,15 @@ label {
     .header-container {
         margin-bottom: 2rem;
     }
+    .login-form {
+        margin: 3rem auto;
+    }
+    .login-btn {
+        margin-top: 1rem;
+    }
     .logout-btn {
         width: 5rem;
         margin: -2rem -2rem 2rem 0;
-    }
-    .login-form {
-        margin: 3rem auto;
     }
     .list-container {
         margin-bottom: 0;

@@ -33,7 +33,6 @@ export const Login = () => {
                 setPasswordError(true);
             } else {
                 setIsSubmitted(true);
-                callApi();
             }
         } else { // Email not found
             setErrorMessages({ name: "email", message: errors.em });
@@ -94,12 +93,12 @@ export const Login = () => {
         </div>
     );
 
-    const callApi = () => {
-        const body = new FormData(form.current);
-        const options = { method: 'POST', body: body };
-        fetch(`http://dev.rapptrlabs.com/Tests/scripts/user-login.php`, options)
-            .then((response) => console.log(response.json()));
-    };
+    // const callApi = () => {
+    //     const body = new FormData(form.current);
+    //     const options = { method: 'POST', body: body };
+    //     fetch(`http://dev.rapptrlabs.com/Tests/scripts/user-login.php`, options)
+    //         .then((response) => console.log(response.json()));
+    // };
 
     return (
         <div> {isSubmitted ? <List /> : renderLoginForm} </div>
